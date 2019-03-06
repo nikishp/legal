@@ -1,0 +1,80 @@
+mixin header(name)
+  - name = name || ''
+  header(class="header " + name)
+    .container
+      .row
+        .col
+          .header__box
+            .hamburger.hamburger--collapse.hamburger--js
+              .hamburger-box
+                .hamburger-inner
+            a.logo(href="#")
+              +svg('logo')
+            nav.nav
+              .nav__list
+                .nav__item
+                  a.nav__link(href="#") Услуги
+                .nav__item
+                  a.nav__link(href="#") Адвокат
+                .nav__item
+                  a.nav__link(href="#") Блог
+                .nav__item
+                  a.nav__link(href="#") Контакты
+            .lang
+              .switch
+                ul.switch__toggle
+                  li.switch__item ua 
+                ul.switch__list
+                  li.switch__item(data-switch="ua") ua
+                  li.switch__item(data-switch="en") en
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- 

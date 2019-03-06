@@ -1,0 +1,165 @@
+.header
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  z-index: 30
+  color: $f
+  // background-image: linear-gradient(to right, $action, $action2)
+  &::before,&::after
+    content: ''
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    z-index: -1
+    transition: opacity .25s linear
+  &::before
+    background-image: linear-gradient(to right, $action, $action2)
+  &:after
+    background-image: linear-gradient(to left, $action, $action2)
+    opacity: 0
+  &:hover
+    &::before
+      opacity: 0
+    &::after
+      opacity: 1
+  .container
+    max-width: 100%
+
+.header__box
+  display: flex
+  align-items: center
+
+.logo
+  display: block
+  font-size: 0
+  .svg
+    +size(200,30)
+    fill: currentColor
+    transition: fill .25s linear
+  &:hover
+    .svg
+      fill: $action
+
+.nav
+  margin-left: auto
+  font-size: rem(18)
+  font-weight: 700
+  line-height: 1
+.nav__list
+  display: flex
+  align-items: center
+.nav__link
+  display: block
+  padding: 5px 20px
+  transition: color .25s linear
+  // outline: $ou
+  &:hover
+    color: $action2
+// the necessary styles of switch
+.switch__toggle
+  position: relative
+  display: inline-flex
+  align-items: center
+  user-select: none
+  cursor: pointer
+  &::after
+    content: ''
+    width: 5px
+    height: 5px
+    margin-left: 5px
+    border: 2px solid grey
+    border-top: none
+    border-left: none
+    transform: rotate(45deg)
+    transition: all .1s
+.switch__toggle--active
+  &::after
+    transform: rotate(225deg)
+.switch__list
+  display: none
+.switch__item
+  cursor: pointer
+
+
+
+
+
+
+
+.hamburger
+  display: inline-block
+  padding: 10px
+  padding-left: 0
+  font-size: 0
+  line-height: 0
+  &:hover
+    opacity: 0.7
+.hamburger-box
+  width: 30px
+  height: 20px
+.hamburger-inner
+  width: 100%
+  height: 2px
+  margin-top: -1px
+  transition-timing-function: ease
+  transition-duration: 0.25s
+  transition-property: transform
+  border-radius: 10px
+  background-color: $f //цвет нужно дублировать
+  &::before, &::after
+    width: 100%
+    height: inherit
+    transition-timing-function: ease
+    transition-duration: 0.25s
+    transition-property: transform
+    border-radius: inherit
+    background-color: $f //цвет нужно дублировать
+  &::before
+    top: -10px
+.hamburger--collapse .hamburger-inner::after
+    top: -19px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
