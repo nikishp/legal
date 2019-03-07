@@ -1,10 +1,14 @@
 .header
-  position: fixed
-  top: 0
-  left: 0
-  right: 0
+  position: relative
+  // position: fixed
+  // top: 0
+  // left: 0
+  // right: 0
   z-index: 30
+  padding: 10px 0
+  font-size: rem(18)
   color: $f
+    
   // background-image: linear-gradient(to right, $action, $action2)
   &::before,&::after
     content: ''
@@ -17,48 +21,82 @@
     transition: opacity .25s linear
   &::before
     background-image: linear-gradient(to right, $action, $action2)
-  &:after
+  // &:after
     background-image: linear-gradient(to left, $action, $action2)
     opacity: 0
-  &:hover
+  // &:hover
     &::before
       opacity: 0
     &::after
       opacity: 1
   .container
     max-width: 100%
-
+  .col
+    position: static
 .header__box
   display: flex
   align-items: center
-
+  +md-block()
+    justify-content: space-between
 .logo
   display: block
   font-size: 0
   .svg
-    +size(200,30)
+    max-width: 200px
+    width: 100%
+    height: 30px
     fill: currentColor
     transition: fill .25s linear
   &:hover
     .svg
-      fill: $action
+      fill: $action2
 
 .nav
   margin-left: auto
-  font-size: rem(18)
   font-weight: 700
   line-height: 1
+  +md-block()
+    display: none
+    position: absolute
+    top: 100%
+    left: 0
+    right: 0
+    background: #fff
+.nav--active
 .nav__list
   display: flex
   align-items: center
+  +md-block()
+    display: block
+    color: $action
 .nav__link
   display: block
   padding: 5px 20px
   transition: color .25s linear
   // outline: $ou
   &:hover
-    color: $action2
+    color: $action
+  +md-block()
+    padding: 10px
 // the necessary styles of switch
+
+.switch
+  position: relative
+  margin-left: 60px
+  line-height: 1
+  +md-block()
+    min-width: 40px
+    margin-left: 10px
+
+  ul,ol
+    padding: 0
+    margin: 0
+    list-style-type: none
+  li
+    min-width: 30px
+    padding: 5px
+  // background: silver
+
 .switch__toggle
   position: relative
   display: inline-flex
@@ -67,19 +105,24 @@
   cursor: pointer
   &::after
     content: ''
-    width: 5px
-    height: 5px
-    margin-left: 5px
-    border: 2px solid grey
-    border-top: none
-    border-left: none
-    transform: rotate(45deg)
-    transition: all .1s
+    position: relative
+    +triangle(bottom, 3px, 5px, #fff)
+    transition: all .25s linear
 .switch__toggle--active
   &::after
-    transform: rotate(225deg)
+    z-index: 99
+    transform: rotate(180deg)
+    +triangle(bottom, 3px, 5px, $action)
 .switch__list
   display: none
+  // display: block
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  z-index: 3
+  color: $action
+  background: #fff
 .switch__item
   cursor: pointer
 
@@ -91,12 +134,18 @@
 
 .hamburger
   display: inline-block
-  padding: 10px
-  padding-left: 0
+  display: none
+  margin-right: 10px
+  padding: 0
+  padding-right: 10px
   font-size: 0
   line-height: 0
+  +md-block()
+    display: block
   &:hover
     opacity: 0.7
+  &.is-active
+    pointer-events: none
 .hamburger-box
   width: 30px
   height: 20px
