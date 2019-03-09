@@ -99,6 +99,143 @@
 
 
 
+.practices
+  .tabs__list
+    height: 100%
+    display: flex
+    margin: 0 -5px
+    // background: silver
+    +md-block()
+      min-height: 300px
+    +sm-block()
+      // display: block
+      flex-direction: column
+      margin: 0
+  .tabs__list-part
+    width: 50%
+    margin: 0 5px
+    +sm-block()
+      width: 100%
+      margin: 0
+    &:first-child
+      +sm-block()
+        height: 33.33%
+        margin-bottom: 10px
+    &:last-child
+      +sm-block()
+        height: 66.67%
+      .tabs__list-item
+        height: calc(50% - 5px)
+        +sm-block()
+          height: 50%
+        &:first-child
+          margin-bottom: 10px
+  .tabs__list-item
+    position: relative
+    display: flex
+    align-items: flex-end
+    justify-content: flex-end
+    height: 100%
+    padding: 1.4rem
+    cursor: pointer
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    &::before
+      content: ''
+      position: absolute
+      bottom: 0
+      right: 0
+      width: 0
+      height: 0
+      background-image: linear-gradient(to right, $action, $action2)
+      opacity: 0
+      transition: width .25s linear, height .25s linear, opacity .25s linear
+    &:hover
+      &::before
+        opacity: 0.8
+        width: 100%
+        height: 100%
+      .title
+        transform: translate(0.6rem, 0.6rem)
+    .title
+      z-index: 3
+      color: #fff
+      font-size: rem(18)
+      font-weight: bold
+      transition: transform .25s linear
+  .tabs__list-item.active-tab
+    &::before
+      opacity: 0.8
+      width: 100%
+      height: 100%
+    .title
+      transform: translate(0.6rem, 0.6rem)
+
+
+  .tabs__content
+    height: 100%
+    flex-direction: column
+    +md-block()
+      padding-top: 40px
+    h2
+      font-weight: bold
+      color: $action
+    p
+      margin-bottom: 0
+  .tabs__content-action
+    margin-top: auto
+    padding-top: 15px
+    font-size: rem(16)
+    font-weight: bold
+    color: $action
+    transition: color .25s linear
+    &:hover
+      color: $action2
+
+.wrap
+  min-height: calc(100vh - 99px)
+  padding: 40px 0
+  +md-block()
+    min-height: 0
+
+
+
+.article
+  padding: 50px 55px
+  font-size: rem(18)
+  line-height: 1.6
+  p
+    margin-top: 0
+  a
+    color: $action2
+    &:hover
+      color: $action
+  +md-block()
+    padding: 40px 0
+.article__title 
+  position: relative
+  font-weight: bold
+  text-align: right
+  // background: red
+  span
+    position: absolute
+    top: 0
+    left: 0
+    transform-origin: 0 0
+    transform: rotate(-90deg) translateX(-100%)
+    // background: silver
+  +md-block()
+    margin-bottom: 30px
+    text-align: left
+    br
+      display: none
+    span
+      position: static
+.article__body
+  h2,h3,h4
+    margin: 1.2rem 0
+    font-weight: bold
 
 
 
@@ -120,7 +257,39 @@
 
 
 
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

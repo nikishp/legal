@@ -7,3 +7,45 @@ mixin svg_c(name,mod)
   - mod = mod || ''
   svg(class="svg svg--colored svg--" + name + ' ' + mod)
     use(xlink:href="img/svg/symbol/sprite-colored.svg#" + name)
+
+mixin hamburger()
+  .hamburger.hamburger--collapse.hamburger--js
+    .hamburger-box
+      .hamburger-inner
+
+mixin logo()
+  a.logo(href="#")
+    +svg('logo')
+
+mixin nav()
+  nav.nav
+    .nav__list
+      .nav__item
+        a.nav__link(href="#") Послуги
+      .nav__item
+        a.nav__link(href="#") Адвокат
+      .nav__item
+        a.nav__link(href="#") Блог
+      .nav__item
+        a.nav__link(href="#") Контакти
+
+mixin lang()
+  .switch.switch--lang
+    ul.switch__toggle
+      li.switch__item ua 
+    ul.switch__list
+      li.switch__item(data-switch="ua") ua
+      li.switch__item(data-switch="en") en
+
+mixin bred()
+  .bred
+    .container
+      .row
+        .col
+          .breadcrumbs
+            .breadcrumbs__item
+              a.breadcrumbs__link(href="#") Головна
+            .breadcrumbs__item
+              a.breadcrumbs__link(href="#") Публікації
+            .breadcrumbs__item
+              a.breadcrumbs__link(href="#") Назва публікації

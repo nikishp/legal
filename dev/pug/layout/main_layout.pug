@@ -6,8 +6,8 @@ html(lang="ru-RU")
     block head
     +head()
   body(class=""+bodyClass)
-    +header()
-    block content  
+    .wrapper
+      block content
     +foot() 
     +hidden()
     +script() 

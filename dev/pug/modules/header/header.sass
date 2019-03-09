@@ -5,11 +5,14 @@
   // left: 0
   // right: 0
   z-index: 30
+  min-height: 50px
   padding: 10px 0
   font-size: rem(18)
   color: $f
-    
+  box-shadow: 0 0 6px 0 rgba(0%, 0%, 0%, .2)
   // background-image: linear-gradient(to right, $action, $action2)
+  // transition: opacity .25s linear
+  transition: $tr
   &::before,&::after
     content: ''
     position: absolute
@@ -20,7 +23,7 @@
     z-index: -1
     transition: opacity .25s linear
   &::before
-    background-image: linear-gradient(to right, $action, $action2)
+    background-image: linear-gradient(to right, $action, #fff 50%)
   // &:after
     background-image: linear-gradient(to left, $action, $action2)
     opacity: 0
@@ -29,8 +32,9 @@
       opacity: 0
     &::after
       opacity: 1
-  .container
-    max-width: 100%
+  &:not(.header--def-container)
+    .container
+      max-width: 100%
   .col
     position: static
 .header__box
@@ -47,13 +51,34 @@
     height: 30px
     fill: currentColor
     transition: fill .25s linear
+    +md-block()
+      fill: $action
   &:hover
     .svg
       fill: $action2
-
+.header--logo-position
+  .header__box
+    justify-content: center
+    +md-block()
+      justify-content: space-between
+  .logo
+    position: absolute
+    top: calc(100% + 20px)
+    left: 20px
+    // background: silver
+    transform-origin: 0 0
+    transform: rotate(-90deg) translateX(-100%)
+    +md-block()
+      position: static
+      transform: none
+  .svg
+    fill: #000
+  .nav
+    margin-left: 0
 .nav
   margin-left: auto
   font-weight: 700
+  color: $def
   line-height: 1
   +md-block()
     display: none
@@ -84,6 +109,7 @@
   position: relative
   margin-left: 60px
   line-height: 1
+  color: $def
   +md-block()
     min-width: 40px
     margin-left: 10px
@@ -95,6 +121,8 @@
   li
     min-width: 30px
     padding: 5px
+    &::before
+      display: none
   // background: silver
 
 .switch__toggle
@@ -106,13 +134,13 @@
   &::after
     content: ''
     position: relative
-    +triangle(bottom, 3px, 5px, #fff)
+    +triangle(bottom, 3px, 5px, $def)
     transition: all .25s linear
 .switch__toggle--active
   &::after
     z-index: 99
     transform: rotate(180deg)
-    +triangle(bottom, 3px, 5px, $action)
+    +triangle(bottom, 3px, 5px, $def)
 .switch__list
   display: none
   // display: block
@@ -121,7 +149,7 @@
   left: 0
   right: 0
   z-index: 3
-  color: $action
+  color: $def
   background: #fff
 .switch__item
   cursor: pointer
@@ -171,10 +199,17 @@
 .hamburger--collapse .hamburger-inner::after
     top: -19px
 
+.header--hidden
+  opacity: 0
+  transform: translateY(-100%)
 
-
-
-
+.header--fixed
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  opacity: 1
+  transform: translateY(0)
 
 
 

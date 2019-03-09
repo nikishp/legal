@@ -97,6 +97,18 @@ h1,h2,h3,h4,h5,h6
   font-weight: normal
   line-height: 1
 
+h1
+  font-size: 2rem 
+h2
+  font-size: 1.7rem
+h3
+  font-size: 1.4rem
+h4
+  font-size: 1.2rem
+h5
+  font-size: 1rem
+
+
 .hidden
   display: none
 
@@ -159,3 +171,111 @@ button[type='submit']
   100%
     opacity: 0
 // count style end
+
+[class*="--fluid"]
+  max-width: 100% !important
+
+.wrapper
+  min-height: calc(100vh - 49px)
+  // background: silver
+  +md-block()
+    min-height: calc(100vh - 83px)
+  +sm-block()
+    min-height: calc(100vh - 117px)
+
+
+.tabs__content 
+  display: none
+.tabs__content.active-tab
+  display: flex
+
+ul
+  // background: silver
+  +md-block()
+    padding-left: 15px
+  li 
+    display: flex
+    align-items: center
+    &::before
+      content: ''
+      +size(6)
+      flex-shrink: 0
+      margin-right: 8px
+      border-radius: 50%
+      background: $action
+
+ol
+  counter-reset: count
+  list-style-type: none
+  +md-block()
+    padding-left: 15px
+  li 
+    display: flex
+    &::before
+      content: counter(count,decimal-leading-zero)
+      min-width: 19px
+      color: $action
+      counter-increment: count
+      flex-shrink: 0
+      margin-right: 8px
+
+.bred
+  padding: 10px 0
+
+.breadcrumbs
+  display: flex
+  flex-wrap: wrap
+  font-size: rem(14)
+  color: $action
+
+  a
+    text-decoration: underline
+    &:hover
+      text-decoration: none
+
+.breadcrumbs__item
+  &::after
+    content: "\2014"
+    margin: 0 5px
+  &:last-child
+    &::after
+      display: none
+    a
+      color: $def
+      text-decoration: none
+      cursor: auto
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.allPage-list
+  min-height: calc(100vh - 199px)
+  margin: 0
+  margin-top: 100px

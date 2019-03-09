@@ -5,29 +5,10 @@ mixin header(name)
       .row
         .col
           .header__box
-            .hamburger.hamburger--collapse.hamburger--js
-              .hamburger-box
-                .hamburger-inner
-            a.logo(href="#")
-              +svg('logo')
-            nav.nav
-              .nav__list
-                .nav__item
-                  a.nav__link(href="#") Послуги
-                .nav__item
-                  a.nav__link(href="#") Адвокат
-                .nav__item
-                  a.nav__link(href="#") Блог
-                .nav__item
-                  a.nav__link(href="#") Контакти
-            .switch.switch--lang
-              ul.switch__toggle
-                li.switch__item ua 
-              ul.switch__list
-                li.switch__item(data-switch="ua") ua
-                li.switch__item(data-switch="en") en
-
-
+            +hamburger()
+            +logo()
+            +nav()
+            +lang()
 
 
 

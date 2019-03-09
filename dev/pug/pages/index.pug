@@ -4,6 +4,18 @@ block head
   - var title = 'Все страницы'
   - var bodyClass = ''
 block content
-  ul
-    li
-      a(href="#") asdf
+  +header()
+  .container(style="max-width: 100%")
+    .row
+      .col
+        ul.allPage-list
+          //- li.allPage-list__item
+            a.allPage-list__link(href='./index.html') index
+          li.allPage-list__item
+            a.allPage-list__link(href='./main.html') main
+          li.allPage-list__item
+            a.allPage-list__link(href='./practices.html') practices
+          li.allPage-list__item
+            a.allPage-list__link(href='./article.html') article
+          //- li.allPage-list__item
+            a.allPage-list__link(href='./thanks.html') thanks
