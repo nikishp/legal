@@ -1,18 +1,16 @@
 extends ../layout/main_layout
 
 block head 
-  - var title = 'Публікації'
+  - var title = 'Назва теми'
   - var bodyClass = ''
 block content
-  +header('header--def-container header--logo-position')
+  +header()
   +bred()
-  section.article
+  +page_title()
+  .blog-article
     .container
       .row
-        .col-lg-2
-          h1.article__title 
-            span Назва<br> публікації
-        .col-lg-10 
+        .col-lg-12
           .article__body
             p Lorem ipsum dolor sit amet <a href="#">consectetur adipisicing </a>elit. Adipisci, dolor ipsa repudiandae quod expedita eos dolore quidem quisquam at enim inventore quia quaerat quis tempore illo! Quisquam quis voluptatum mollitia possimus vel aperiam provident debitis enim illum porro distinctio fugit obcaecati repudiandae ipsam dolorem maxime eius, vero architecto natus laborum?
             ul

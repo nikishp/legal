@@ -1,0 +1,38 @@
+extends ../layout/main_layout
+
+block head 
+  - var title = 'Спілкуймося'
+  - var bodyClass = ''
+block content
+  +header()
+  //- h1 Спілкуймося
+  .contact-block
+    .container
+      //- .row
+        .col
+          h1 Savior Legal
+            //- +svg('logo')
+      .row.row--contact
+        .col-md-6 
+          .contact-option.contact-option--phone
+            h2 Дзвоніть
+            a.phone(href="tel:+380999870227") +38(098) 870-22-73
+          .contact-option.contact-option--email
+            h2 Пишіть
+            a.email(href="mailto:write-to@savior.legal") write-to@savior.legal
+          .contact-option.contact-option--sc
+            h2 Слідкуйте
+            .sc
+              a.sc__link(href='https://www.facebook.com/')
+                +svg('fc')
+              a.sc__link(href='https://www.linkedin.com/')
+                +svg('link')
+              a.sc__link(href='https://t.me/')
+                +svg('tg')
+        .col-md-6 
+          .contant-form
+            h2 Запитуйте
+            - formTitle = 'Contact page form'
+            +form_contact('formClass', 'formId')
+
+

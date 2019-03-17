@@ -9,6 +9,82 @@ $(function () {
 
   //dynamicHeight($('.you_class'));
 
+  $("[data-fancybox]").fancybox({
+    touch: false
+  });
+
+  $(".form__item input, .form__item textarea").focus(function () {
+    $(this).parent().addClass("form__item--focus");
+  }).blur(function () {
+    if ($(this).val() === '') {
+      $(this).parent().removeClass("form__item--focus");
+    }
+  });
+
+
+
+  $('.person-content').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    accessibility: false,
+    draggable: false,
+    asNavFor: '.person-control'
+  });
+  $('.person-control').slick({
+    vertical: true,
+    verticalSwiping: true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    // infinite: false,
+    asNavFor: '.person-content',
+    focusOnSelect: true,
+    arrows: true,
+    prevArrow: '<div class="sl-btn sl-btn--prev"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132.596 240.822"><defs><linearGradient id="gr_prev"><stop offset="0%" stop-color="#13547a"/><stop offset="100%" stop-color="#80d0c7"/></linearGradient></defs><path fill="url(#gr_prev)"  d="M 57.633,129.007 165.93,237.268 c 4.752,4.74 12.451,4.74 17.215,0 4.752,-4.74 4.752,-12.439 0,-17.179 L 83.438,120.418 183.133,20.747 c 4.752,-4.74 4.752,-12.439 0,-17.191 -4.752,-4.74 -12.463,-4.74 -17.215,0 L 57.621,111.816 c -4.679,4.691 -4.679,12.511 0.012,17.191 z" transform="translate(-54.113 -.001)"/></svg></div>',
+    nextArrow: '<div class="sl-btn sl-btn--next"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132.596 240.822"><defs><linearGradient id="gr_next"><stop offset="0%" stop-color="#80d0c7"/><stop offset="100%" stop-color="#13547a"/></linearGradient></defs><path fill="url(#gr_next)"  d="M 183.189,111.816 74.892,3.555 c -4.752,-4.74 -12.451,-4.74 -17.215,0 -4.752,4.74 -4.752,12.439 0,17.179 l 99.707,99.671 -99.695,99.671 c -4.752,4.74 -4.752,12.439 0,17.191 4.752,4.74 12.463,4.74 17.215,0 L 183.201,129.006 c 4.68,-4.691 4.68,-12.511 -0.012,-17.19 z" transform="translate(-54.113)"/></svg></div>',
+    responsive: [{
+        breakpoint: 992,
+        settings: {
+          vertical: false,
+          verticalSwiping: false,
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          vertical: false,
+          verticalSwiping: false,
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          vertical: false,
+          verticalSwiping: false,
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ]
+  });
+
+
+
+
+
+
+
+
+
+
+
   //menu fixed on scroll
   var navPos, winPos, navHeight;
 
@@ -119,7 +195,7 @@ $(function () {
 
   $form.on('click', function (event) {
     var formId = $(this).attr("id");
-    // console.log('formId ' + formId); 
+    // console.log('formId ' + formId);
     localStorage.setItem('form', formId);
     var pageName = window.location.pathname;
     // console.log('pageName ' + pageName);
@@ -137,7 +213,7 @@ $(function () {
       // 		minlength: 6,
       // 		number: true
       // 	}
-      // }, 
+      // },
 
       submitHandler: function (form) {
         var formData = new FormData(form);
@@ -486,4 +562,6 @@ function pageWidget(pages) {
   var widgetStilization = $('<style>body{position:relative}.widget_wrap{position:fixed;top:0;left:-10px;z-index:9999;padding:10px 20px;background:#222;border-bottom-right-radius:10px;transition:all .3s ease;transform:translate(-100%,0)}.widget_wrap ul{max-width:220px;width:100%;display:flex;flex-wrap:wrap}.widget_wrap:after{content:" ";position:absolute;top:0;left:100%;width:24px;height:24px;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAgMAAABinRfyAAAABGdBTUEAALGPC/xhBQAAAAxQTFRF////////AAAA////BQBkwgAAAAN0Uk5TxMMAjAd+zwAAACNJREFUCNdjqP///y/DfyBg+LVq1Xoo8W8/CkFYAmwA0Kg/AFcANT5fe7l4AAAAAElFTkSuQmCC) 50% 50% no-repeat #222;cursor:pointer}.widget_wrap:hover{left:0;transform:translate(0,0)}.widget_item{padding:0 0 10px}.widget_link{display:block;color:#fff;text-decoration:none;font-size:15px;width:100px}.widget_link:hover{color:#fff;text-decoration:underline}</style>');
   widgetStilization.prependTo(".widget_wrap")
 };
-pageWidget(['index', 'main', 'practices', 'article', 'thanks'])
+pageWidget(['index', 'main', 'practices', 'article', 'person', 'contacts', 'blog', 'blog-article',   'thanks'
+])
+//endRemoveIf(production)

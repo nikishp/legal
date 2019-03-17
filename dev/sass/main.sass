@@ -40,7 +40,7 @@
   background-image: url('../img/general/fotorama.png')
   background-repeat: no-repeat
 
-//smartgrid settings 
+//smartgrid settings
 // .container
 //   +container()
 // .row
@@ -70,6 +70,7 @@
   position: absolute
   top: 50%
   z-index: 10
+  font-size: 0
   cursor: pointer
   transform: translateY(-50%)
   svg
@@ -99,12 +100,22 @@
 
 
 
+.wrap
+  // background: silver
+  // .container
+    // max-width: 1600px
+    // background: green
+  .row.tabs
+    min-height: calc(100vh - 99px)
+    padding-top: 50px
+    padding-bottom: 50px
 .practices
   .tabs__list
     height: 100%
+    max-height: 1200px
     display: flex
     margin: 0 -5px
-    // background: silver
+    // background: red
     +md-block()
       min-height: 300px
     +sm-block()
@@ -175,6 +186,7 @@
 
   .tabs__content
     height: 100%
+    max-height: 1200px
     flex-direction: column
     +md-block()
       padding-top: 40px
@@ -193,13 +205,6 @@
     &:hover
       color: $action2
 
-.wrap
-  min-height: calc(100vh - 99px)
-  padding: 40px 0
-  +md-block()
-    min-height: 0
-
-
 
 .article
   padding: 50px 55px
@@ -213,7 +218,7 @@
       color: $action
   +md-block()
     padding: 40px 0
-.article__title 
+.article__title
   position: relative
   font-weight: bold
   text-align: right
@@ -240,59 +245,238 @@
 
 
 
+.person-page
+  // .wrapper
+  //   min-height: 100vh
+  //   padding: 50px 0
+  //   padding: 0
+  //   // background: silver
+  // // .header
+  //   position: fixed
+  //   top: 0
+  //   left: 0
+  //   right: 0
+  //   // &::before
+  //     opacity: .1
+  //   +md-block()
+  //     position: relative
+  // // .header--fixed
+  //    +md-block()
+  //     position: fixed
+  // // .foot
+  //   position: fixed
+  //   bottom: 0
+  //   left: 0
+  //   right: 0
+  //   background: #fff
+  //   +md-block()
+  //     position: static
+
+
+.person-block
+  // background: red
+  padding: 40px 0
+.row-person
+  +md-block()
+    flex-direction: column-reverse
+
+// .person-content
+  +md-block()
+    padding-bottom: 40px
+
+.person-content__item
+  // min-height: calc(100vh - 100px)
+  // min-height: 100vh
+  // background: green
+
+
+.person-img
+  // height: 100%
+  // min-height: 100vh
+  background-repeat: no-repeat
+  background-position: center 0
+  background-size: cover
+  border-radius: 50%
+  &::before
+    content: ''
+    display: block
+    padding-top: 100%
+
+  +md-block()
+    margin-top: 30px
+
+// .person-info,.person-control
+//   padding-top: 90px
+//   padding-bottom: 50px
+//   +md-block()
+//     padding-top: 40px
+//     padding-bottom: 40px
+.person-info
+  +md-block()
+    padding-top: 0
+.person-info__name
+  font-size: 3.5rem
+  color: $action
+  font-weight: bold
+  +lg-block()
+    font-size: 2.8rem
+
+.person-info__position
+  margin-top: 2rem
+  font-size: 2rem
+  font-weight: bold
+  span
+    display: block
+    margin-top: 10px
+    color: $action
+    font-size: 1.5rem
+    font-weight: normal
+
+.person-info__desc
+  margin-top: 3rem
+  font-size: rem(18)
+  b
+    display: block
+    font-size: rem(20)
+
+
+.person-control
+  // background: silver
+  // height: 100%
+  // height: 100vh
+  // overflow: hidden
+  padding-bottom: 90px
+  +md-block()
+    padding-bottom: 40px
+    padding-left: 40px
+    padding-right: 40px
+  @media only screen and (min-width: 992px)
+    .sl-btn
+      top: auto
+      svg
+        +size(30)
+    .sl-btn--prev
+      top: 55px
+      left: 50%
+      transform: translateX(-50%) rotate(90deg)
+    .sl-btn--next
+      bottom: 50px
+      right: auto
+      left: 50%
+      transform: translateX(-50%) rotate(90deg)
+.person-control__item
+  padding-top: 10px
+  padding-bottom: 10px
+  cursor: pointer
+  text-align: center
+  // background: red
+  .person-img
+    +size(100)
+    min-height: 0
+    margin-left: auto
+    margin-right: auto
+    border-radius: 50%
+  .person-info__name
+    margin-top: 10px
+    font-size: 1rem
+
+  .person-info__position
+    margin-top: 5px
+    font-size: 1rem
+    span
+      display: none
+
+
+.contact-block
+  min-height: calc(100vh - 99px)
+  display: flex
+  align-items: center
+  padding: 40px 0
+  // background: silver
+  +md-block()
+    min-height: 0
+  h1
+    margin-bottom: 40px
+    font-weight: bold
+    color: $action
+  h2
+    // margin-bottom: 30px
+    // color: $action2
+  form
+    margin-top: 20px
+
+
+.contact-option
+  &:not(:last-child)
+    margin-bottom: 40px
+  a
+    display: block
+    margin: 15px 0
+    font-weight: bold
+    font-size: 1.4rem
+    color: $action
+    &:hover
+      color: $action2
+
+
+.sc
+  display: flex
+  margin-top: 15px
+  // justify-content: center
+  font-size: 0
+  +sm-block()
+  .svg
+    +size(20)
+    fill: $action
+    transition: fill .25s linear
+  a
+    margin: 0
+    margin-right: 20px
+    &:hover
+      .svg
+        fill: $action2
+
+.contant-form
+  +sm-block()
+    margin-top: 40px
 
 
 
+.police-popup
+  max-width: 980px
+  line-height: 2
+
+.police-popup__title
+  margin: 20px 0
+  font-size: rem(22)
+  font-weight: bold
 
 
+.tpage-block
+  margin-top: 130px
+  text-align: center
+  h1
+    color: $action
+  p
+    font-size: 1.3rem
 
 
+.blog-articles
+  padding: 40px 0
+  .container
+    max-width: 1200px
+
+.blog-articles__item
+  margin-bottom: 70px
 
 
+.page-title
+  padding: 20px 0 40px
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.blog-article
+  padding-bottom: 40px
+  .container
+    max-width: 1200px
 
 
 /* page style end */

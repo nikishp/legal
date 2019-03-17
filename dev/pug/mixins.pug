@@ -48,4 +48,12 @@ mixin bred()
             .breadcrumbs__item
               a.breadcrumbs__link(href="#") Публікації
             .breadcrumbs__item
-              a.breadcrumbs__link(href="#") Назва публікації
+              a.breadcrumbs__link(href="#") !{title}
+
+
+mixin page_title()
+  .page-title
+    .container
+      .row
+        .col-12
+          h1 !{title}

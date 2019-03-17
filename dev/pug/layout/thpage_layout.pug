@@ -7,15 +7,15 @@ html(lang="ru-RU")
     +head()
   body.thank-page
     .wrapper
-      //+header()
+      +header()
       block content  
-      //+foot()
+    +foot()
 
-
-    +script()
+    +hidden()
+    +script() 
     block script
 
-      script.
+      //- script.
         //furntion to auto download file
         //-  в этой функции файлы типа пдф будут открыты в окне автоматически
         //- $(function() {

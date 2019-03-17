@@ -5,38 +5,38 @@ block head
   - var bodyClass = ''
 block content
   +header()
-  .container.container--fluid.practices
-    .row
-      .col
-        .wrap.row.tabs
-          .col-lg-6
-            .tabs__list
-              .tabs__list-part
-                .tabs__list-item.tabs__list-item--f.active-tab(data-index="0" style="background-image: url(https://picsum.photos/1040/2800/?image=297)") 
-                  span.title Практика 1
-              .tabs__list-part
-                .tabs__list-item.tabs__list-item--s(data-index="1" style="background-image: url(https://picsum.photos/1040/1400/?image=693)") 
-                  span.title Практика 2
-                .tabs__list-item.tabs__list-item--t(data-index="2" style="background-image: url(https://picsum.photos/1040/1400?image=1048)") 
-                  span.title Практика 3
-          .col-lg-6
-            .tabs__content.active-tab
-              h2 Практика 1
-              p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit aliquam dolore corrupti quos eum perferendis dolorum sit dicta sapiente error nulla minus et quibusdam, ex quaerat ad eaque. Soluta hic sapiente placeat minima nihil optio adipisci voluptatum nemo fugiat temporibus error, deserunt laboriosam provident eum est mollitia et possimus aspernatur.
-              p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis nemo, qui iure magnam est ratione illo dolor quaerat quam necessitatibus officiis ipsam rerum unde corporis voluptatem in saepe nesciunt corrupti.
-              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nisi consequatur expedita molestiae qui repellat iusto eveniet, iste molestias. Suscipit, libero maxime reprehenderit veniam consectetur voluptatibus quis! Sapiente distinctio repellat nisi fuga ipsam. Praesentium cum debitis ipsum placeat maiores eaque, ipsam vero quae nostrum quasi facere, eum qui. Sapiente, atque. Possimus amet quo cum minima obcaecati dolores natus saepe reiciendis consequuntur laboriosam corrupti ullam, odit tempore omnis nihil nulla. Laboriosam.
-              .tabs__content-action
-                a(href="#") Докладніше
-            .tabs__content
-              h2 Практика 2
-              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto error saepe voluptates necessitatibus vitae eius omnis ipsa quod deleniti? Quisquam ab facere aliquam ut inventore iste sunt perferendis tempora vero.
-              p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus, fuga vitae distinctio omnis a necessitatibus velit eum, quisquam earum corrupti, eaque numquam. Adipisci quis optio vel, modi dignissimos nostrum mollitia quaerat eius nemo minus facilis quasi excepturi perspiciatis quae doloribus quibusdam vitae. Quam culpa asperiores recusandae? Consequuntur est reiciendis fugiat.
-              p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores mollitia corrupti consequuntur, culpa dolor soluta optio ratione laudantium sed autem.
-              .tabs__content-action
-                a(href="#") Докладніше
-            .tabs__content
-              h2 Практика 3
-              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos odit quisquam impedit minus! Officia molestiae, illo facere deleniti corrupti recusandae vero necessitatibus harum amet odio, quasi tenetur nisi. Est dolores quae laborum minima itaque labore doloribus officia ipsa iure voluptas vel aperiam optio eos similique ea nam molestiae doloremque nihil eaque in recusandae, culpa eius. Provident ut, illum hic laboriosam sint sunt cum perspiciatis veniam aspernatur perferendis dolorum vitae voluptatum.
-              p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi a ducimus esse eum ad deserunt eos delectus consectetur aliquid suscipit.
-              .tabs__content-action
-                a(href="#") Докладніше
+  //- .container.container--fluid.practices
+  .wrap
+    .container.practices
+      .row.tabs
+        .col-lg-6
+          .tabs__list
+            .tabs__list-part
+              .tabs__list-item.tabs__list-item--f.active-tab(data-index="0" style="background-image: url(https://picsum.photos/730/1200/?image=297)") 
+                span.title Практика 1
+            .tabs__list-part
+              .tabs__list-item.tabs__list-item--s(data-index="1" style="background-image: url(https://picsum.photos/730/730/?image=693)") 
+                span.title Практика 2
+              .tabs__list-item.tabs__list-item--t(data-index="2" style="background-image: url(https://picsum.photos/730/730?image=1048)") 
+                span.title Практика 3
+        .col-lg-6
+              .tabs__content.active-tab
+                h2 Практика 1
+                p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit aliquam dolore corrupti quos eum perferendis dolorum sit dicta sapiente error nulla minus et quibusdam, ex quaerat ad eaque. Soluta hic sapiente placeat minima nihil optio adipisci voluptatum nemo fugiat temporibus error, deserunt laboriosam provident eum est mollitia et possimus aspernatur.
+                p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis nemo, qui iure magnam est ratione illo dolor quaerat quam necessitatibus officiis ipsam rerum unde corporis voluptatem in saepe nesciunt corrupti.
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nisi consequatur expedita molestiae qui repellat iusto eveniet, iste molestias. Suscipit, libero maxime reprehenderit veniam consectetur voluptatibus quis! Sapiente distinctio repellat nisi fuga ipsam. Praesentium cum debitis ipsum placeat maiores eaque, ipsam vero quae nostrum quasi facere, eum qui. Sapiente, atque. Possimus amet quo cum minima obcaecati dolores natus saepe reiciendis consequuntur laboriosam corrupti ullam, odit tempore omnis nihil nulla. Laboriosam.
+                .tabs__content-action
+                  a(href="#").btn Докладніше
+              .tabs__content
+                h2 Практика 2
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto error saepe voluptates necessitatibus vitae eius omnis ipsa quod deleniti? Quisquam ab facere aliquam ut inventore iste sunt perferendis tempora vero.
+                p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus, fuga vitae distinctio omnis a necessitatibus velit eum, quisquam earum corrupti, eaque numquam. Adipisci quis optio vel, modi dignissimos nostrum mollitia quaerat eius nemo minus facilis quasi excepturi perspiciatis quae doloribus quibusdam vitae. Quam culpa asperiores recusandae? Consequuntur est reiciendis fugiat.
+                p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores mollitia corrupti consequuntur, culpa dolor soluta optio ratione laudantium sed autem.
+                .tabs__content-action
+                  a(href="#").btn Докладніше
+              .tabs__content
+                h2 Практика 3
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos odit quisquam impedit minus! Officia molestiae, illo facere deleniti corrupti recusandae vero necessitatibus harum amet odio, quasi tenetur nisi. Est dolores quae laborum minima itaque labore doloribus officia ipsa iure voluptas vel aperiam optio eos similique ea nam molestiae doloremque nihil eaque in recusandae, culpa eius. Provident ut, illum hic laboriosam sint sunt cum perspiciatis veniam aspernatur perferendis dolorum vitae voluptatum.
+                p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi a ducimus esse eum ad deserunt eos delectus consectetur aliquid suscipit.
+                .tabs__content-action
+                  a(href="#").btn Докладніше

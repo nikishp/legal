@@ -18,7 +18,7 @@ body
 *:focus::placeholder
   opacity: 0
 *::selection
-  background-color: red
+  background-color: $action2
   color: #fff
  
 // body input:focus:required:invalid,
@@ -71,6 +71,8 @@ a, input, button
     outline: none
     color: inherit
     text-decoration: none
+a
+  transition: color .25s linear
 input,textarea
   border: 1px solid #000
 select
@@ -124,11 +126,20 @@ table
   display: inline-flex
   justify-content: center
   align-items: center
-  min-width: 100px
+  min-width: 200px
+  height: 50px
+  color: #fff
+  font-weight: 600
   cursor: pointer
   user-select: none
-  background: lightgrey
+  background: linear-gradient(to left, $action 50%, $action2 50%)
+  background-size: 200% 100%
+  background-position: right top
   transition: $tr
+  &:hover,&:focus,&:active
+    color: $action
+    background-position: left top
+
 button[type='submit']
   .form-load
     width: 0
@@ -244,7 +255,6 @@ ol
       color: $def
       text-decoration: none
       cursor: auto
-
 
 
 

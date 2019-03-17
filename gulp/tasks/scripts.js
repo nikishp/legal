@@ -72,7 +72,7 @@ module.exports = function() {
         // 'dev/libs/jquery.validate/jquery.validate.js',
         // 'dev/libs/jquery.validate/messages_ru.js',
         'node_modules/jquery-validation/dist/jquery.validate.js',
-        'node_modules/jquery-validation/dist/localization/messages_ru.js',
+        'node_modules/jquery-validation/dist/localization/messages_uk.js',
 
         //phone mask file
         'dev/libs/phone.mask/mask.js',

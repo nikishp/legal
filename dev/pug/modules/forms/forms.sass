@@ -1,1 +1,46 @@
-/* forms style */
+.form__item
+  position: relative
+  display: block
+  &:not(:last-child)
+    margin-bottom: 40px
+  // background: silver
+  label
+    position: absolute
+    top: 50%
+    left: 15px
+    font-size: 1rem
+    line-height: 1
+    cursor: text
+    transform: translateY(-50%)
+    transition: $tr
+  label.error
+    top: calc(100% + 5px)
+    left: 0
+    color: red !important
+    font-size: 13px
+    transform: none
+  input,textarea
+    display: block
+    max-width: 520px
+    width: 100%
+    height: 50px
+    padding-left: 15px
+    padding-right: 15px
+    border: none
+    border: 1px solid $action2
+    transition: $tr
+  textarea
+    height: 150px
+    padding-top: 20px
+.form__item--textarea
+  label
+    top: 20px
+  .form__item--focus
+    label
+.form__item--focus
+  label
+    top: -15px
+    left: 15px
+    color: $action
+    font-size: rem(14)
+    transform: translateY(0)

@@ -1,0 +1,67 @@
+extends ../layout/main_layout
+
+block head
+  - var title = 'Хто з нами'
+  //- - var bodyClass = 'person-page'
+  - var bodyClass = ''
+block content
+  +header()
+  //- +bred()
+  .person-block
+    .container
+      .row.row-person
+        .col-lg-10
+          .person-content
+            .person-content__item
+              .row
+                .col-lg-7
+                  .person-info
+                    h1.person-info__name Андрей Раецкий
+                    h2.person-info__position Юрист
+                      span Основатель компании Savior Legal, корпоративные споры, коммерческие споры
+                    .person-info__desc
+                      p
+                        b Специализация
+                        | Александр специализируется на сложных коммерческих спорах, корпоративных спорах, процедурах банкротства.
+                      b Lorem, ipsum.
+                      ul
+                        li Lorem, ipsum dolor.
+                        li Lorem, ipsum.
+                        li Lorem ipsum dolor sit amet.
+                .col-lg-5
+                  //- .person-img: img(src="https://picsum.photos/1040/1400?image=1048", alt="image")
+                  //- .person-img: img(src="img/content/man.jpg", alt="image")
+                  .person-img(style="background-image: url(img/content/man.jpg)")
+            .person-content__item
+              .row
+                .col-lg-7
+                  .person-info
+                    h1.person-info__name Ярослав Швалюк
+                    h2.person-info__position Юрист
+                      span Корпоративные споры, коммерческие споры
+                    .person-info__desc
+                      p
+                        b Специализация
+                        | Александр специализируется на сложных коммерческих спорах, корпоративных спорах, процедурах банкротства.
+                      b Lorem, ipsum.
+                      ul
+                        li Lorem, ipsum dolor.
+                        li Lorem, ipsum.
+                        li Lorem ipsum dolor sit amet.
+                .col-lg-5
+                  //- .person-img: img(src="https://picsum.photos/1040/1400?image=1048", alt="image")
+                  //- .person-img: img(src="img/content/man.jpg", alt="image")
+                  .person-img(style="background-image: url(img/content/man2.jpg)")
+
+        .col-lg-2
+          .person-control
+            .person-control__item
+              .person-img(style="background-image: url(img/content/man.jpg)")
+              .person-info__name Андрей Раецкий
+              .person-info__position Юрист
+                span Основатель компании Savior Legal, корпоративные споры, коммерческие споры
+            .person-control__item
+              .person-img(style="background-image: url(img/content/man2.jpg)")
+              .person-info__name Ярослав Швалюк
+              .person-info__position Юрист
+                span Основатель компании Savior Legal, корпоративные споры, коммерческие споры
