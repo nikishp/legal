@@ -22,9 +22,9 @@ module.exports = function() {
         }
       }
     }))
-      .pipe($.gulp.dest('build/img/svg'));
+      .pipe($.gulp.dest('build/assets/img/svg'));
   });
-  
+
   $.gulp.task('svg_c', () => {
     return $.gulp.src('dev/img/svg/svg_colored/*.svg')
       .pipe($.gp.svgmin({
@@ -48,6 +48,6 @@ module.exports = function() {
         }
       }
     }))
-      .pipe($.gulp.dest('build/img/svg'));
+      .pipe($.gulp.dest('build/assets/img/svg'));
   });
 };

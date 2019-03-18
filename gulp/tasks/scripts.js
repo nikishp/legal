@@ -1,7 +1,7 @@
 module.exports = function() {
  var jsLibsPath = [
         // jqurye 3...
-        //'node_modules/jquery/dist/jquery.js', 
+        //'node_modules/jquery/dist/jquery.js',
         //jquery 2.2.4
         'dev/libs/jquery/jquery-2.2.4.min.js',
 
@@ -56,7 +56,7 @@ module.exports = function() {
         //isotope-layout
         //https://isotope.metafizzy.co/
         //'node_modules/isotope-layout/dist/isotope.pkgd.min.js',
-  
+
         //Swiper
         //http://idangero.us/swiper/
         //'node_modules/swiper/dist/js/swiper.js',
@@ -125,7 +125,7 @@ module.exports = function() {
         //https://github.com/bfred-it/object-fit-images
 
         /* how to use
-        in common.js add 
+        in common.js add
           objectFitImages();
         in style use sass mixin:
           +object-fit(contain)
@@ -164,7 +164,7 @@ module.exports = function() {
                 message: "\n Error in: <%= error.cause.filename %>\n Error text: <%= error.cause.message %> \n Error in line: <%= error.cause.line %>",
             }))
             .pipe($.gp.sourcemaps.write())
-            .pipe($.gulp.dest('build/js/'))
+            .pipe($.gulp.dest('build/assets/js/'))
             .pipe($.browserSync.reload({
                 stream: true
             }))
@@ -193,7 +193,7 @@ module.exports = function() {
                 title: "Error in JS:",
                 message: "\n Error in: <%= error.cause.filename %>\n Error text: <%= error.cause.message %> \n Error in line: <%= error.cause.line %>",
             }))
-            .pipe($.gulp.dest('build/js/'))
+            .pipe($.gulp.dest('build/assets/js/'))
     });
 
     $.gulp.task('libsJS:dev', () => {
@@ -209,7 +209,7 @@ module.exports = function() {
                 title: "Error in JS:",
                 message: "\n Error in: <%= error.cause.filename %>\n Error text: <%= error.cause.message %> \n Error in line: <%= error.cause.line %>",
             }))
-            .pipe($.gulp.dest('build/js/'))
+            .pipe($.gulp.dest('build/assets/js/'))
     });
 
     $.gulp.task('libsJS:build', () => {
@@ -225,7 +225,7 @@ module.exports = function() {
                 title: "Error in JS:",
                 message: "\n Error in: <%= error.cause.filename %>\n Error text: <%= error.cause.message %> \n Error in line: <%= error.cause.line %>",
             }))
-            .pipe($.gulp.dest('build/js/'))
+            .pipe($.gulp.dest('build/assets/js/'))
     });
 
 };

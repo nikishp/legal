@@ -1,12 +1,12 @@
 mixin svg(name,mod)
   - mod = mod || ''
   svg(class="svg svg--" + name + ' ' + mod)
-    use(xlink:href="img/svg/symbol/sprite.svg#" + name)
+    use(xlink:href="assets/img/svg/symbol/sprite.svg#" + name)
 
 mixin svg_c(name,mod)
   - mod = mod || ''
   svg(class="svg svg--colored svg--" + name + ' ' + mod)
-    use(xlink:href="img/svg/symbol/sprite-colored.svg#" + name)
+    use(xlink:href="assets/img/svg/symbol/sprite-colored.svg#" + name)
 
 mixin hamburger()
   .hamburger.hamburger--collapse.hamburger--js
@@ -32,7 +32,7 @@ mixin nav()
 mixin lang()
   .switch.switch--lang
     ul.switch__toggle
-      li.switch__item ua 
+      li.switch__item ua
     ul.switch__list
       li.switch__item(data-switch="ua") ua
       li.switch__item(data-switch="en") en

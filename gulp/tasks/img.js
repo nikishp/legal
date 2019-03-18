@@ -14,12 +14,12 @@ module.exports = function() {
         message: error.message
       };
     }))
-    .pipe($.gulp.dest('build/img/'));
+    .pipe($.gulp.dest('build/assets/img/'));
   });
 
   $.gulp.task('img:build', () => {
     return $.gulp.src(imgPath)
     .pipe($.gp.image())
-    .pipe($.gulp.dest('build/img/'));
+    .pipe($.gulp.dest('build/assets/img/'));
   });
 };

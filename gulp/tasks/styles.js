@@ -7,26 +7,26 @@ module.exports = function () {
     .on('error', $.gp.notify.onError(function (error) {
       return {
         title: 'sass',
-        message: error.message 
+        message: error.message
       };
     }))
 //    .pipe($.gp.autoprefixer({
 //    browsers: ['last 6 version']
 //    }))
     .pipe($.gcmq())
-    //.pipe($.gp.cssnano()) 
+    //.pipe($.gp.cssnano())
     //.pipe($.gp.cleanCss())
     .pipe($.gp.csso({
       // forceMediaMerge: true
-    })) 
+    }))
     .on('error', $.gp.notify.onError(function (error) {
       return {
         title: 'sass',
-        message: error.message 
+        message: error.message
       };
     }))
     .pipe($.gp.sourcemaps.write())
-    .pipe($.gulp.dest('build/css/'))
+    .pipe($.gulp.dest('build/assets/css/'))
     .pipe($.browserSync.reload({
       stream: true
     }))
@@ -39,13 +39,13 @@ module.exports = function () {
       browsers: ['last 3 version']
     }))
     .pipe($.gcmq())
-    //.pipe($.gp.cssnano()) 
+    //.pipe($.gp.cssnano())
     //.pipe($.gp.cleanCss({
-    //format: 'beautify' 
+    //format: 'beautify'
     //}))
     .pipe($.gp.csso())
     .pipe($.gulp.dest('build/css/'))
-  }); 
+  });
 
   $.gulp.task('sassLibs:dev', () => {
     return $.gulp.src('dev/sass/libs.sass')
@@ -61,11 +61,11 @@ module.exports = function () {
     //.pipe($.gp.autoprefixer({
     //browsers: ['last 3 version']
     //}))
-    //.pipe($.gp.cssnano()) 
+    //.pipe($.gp.cssnano())
     //.pipe($.gp.cleanCss())
-    .pipe($.gp.csso()) 
+    .pipe($.gp.csso())
     .pipe($.gp.sourcemaps.write())
-    .pipe($.gulp.dest('build/css/'))
+    .pipe($.gulp.dest('build/assets/css/'))
     .pipe($.browserSync.reload({
       stream: true
     }));
@@ -79,10 +79,10 @@ module.exports = function () {
       browsers: ['last 3 version']
     }))
     .pipe($.gcmq())
-    //.pipe($.gp.cssnano()) 
+    //.pipe($.gp.cssnano())
     //.pipe($.gp.cleanCss())
     .pipe($.gp.csso())
-    .pipe($.gulp.dest('build/css/'))
+    .pipe($.gulp.dest('build/assets/css/'))
   });
 
 };
