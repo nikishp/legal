@@ -44,7 +44,7 @@ module.exports = function () {
     //format: 'beautify'
     //}))
     .pipe($.gp.csso())
-    .pipe($.gulp.dest('build/css/'))
+    .pipe($.gulp.dest('build/assets/css/'))
   });
 
   $.gulp.task('sassLibs:dev', () => {
