@@ -6,19 +6,38 @@ block head
 block content
   +header()
   .main-sl-wrap
-    .sl
-      .sl__item(style="background-image: url(assets/img/content/sl_1.jpg)")
-        a.container(href="#")
-          span.row
-            span.col
-              span.main-sl__title Послуга перша
-      .sl__item(style="background-image: url(assets/img/content/sl_2.jpg)")
-        a.container(href="#")
-          span.row
-            span.col
-              span.main-sl__title Послуга друга
-      .sl__item(style="background-image: url(assets/img/content/sl_3.jpg)")
-        a.container(href="#")
-          span.row
-            span.col
-              span.main-sl__title Послуга третя
+    .container
+      .row.row--aic
+        .col-lg-6
+          .main-sl-box
+            svg(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 285 80', preserveAspectRatio="xMidYMid slice")
+              defs
+                mask#mask(x='0', y='0', width='100%', height='100%')
+                  rect(x='0', y='0', width='100%', height='100%')
+                  text(x="50%" y="0" dy="1em") S.L
+              rect(x='0', y='0', width='100%', height='100%')
+            .sl
+              .sl__item(style="background-image: url(assets/img/general/1.jpg)")
+                //- a.container(href="#")
+                  span.row
+                    span.col
+                      span.main-sl__title Судові спори
+              .sl__item(style="background-image: url(assets/img/general/2.jpg)")
+                //- a.container(href="#")
+                  span.row
+                    span.col
+                      span.main-sl__title Захист інтелектуальної власності
+              .sl__item(style="background-image: url(assets/img/general/3.jpg)")
+                //- a.container(href="#")
+                  span.row
+                    span.col
+                      span.main-sl__title Послуга третя
+              .sl__item(style="background-image: url(assets/img/general/4.jpg)")
+                //- a.container(href="#")
+                  span.row
+                    span.col
+                      span.main-sl__title Супровід ІТ-проектів
+        .col-lg-6 
+          .main-ls-desc 
+            b some title
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, similique, voluptatem. Ipsum non, unde est ratione aliquid maiores consequuntur adipisci itaque soluta velit eveniet porro, minima qui, minus saepe provident dolores autem quo veritatis ea harum odio. In, velit, aspernatur!

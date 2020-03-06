@@ -51,21 +51,69 @@
 
 /* page style */
 .main-sl-wrap
-.sl
-.sl__item
-  display: inline-flex !important
+  position: relative
+  min-height: calc(100vh - 99px)
+  display: flex
   align-items: center
-  min-height: calc(100vh - 50px)
-  padding-bottom: 50px
-  padding-top: 50px
-  background-color: grey
+  font-size: 0
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    width: 40%
+    background: rgba(0, 155, 216, 0.1)
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 20% 100%, 0% 50%)
+    +max(992)
+      display: none
+
+.main-sl-box
+  position: relative
+  svg 
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 3
+    height: 100%
+    width: 100%
+    text
+      font-size: 60px
+      font-weight: bold
+      text-anchor: middle
+    rect
+      fill: #fff
+      // fill: yellow
+      display: block
+      width: 100%
+      height: 100%
+    & > rect
+      mask: url(#mask)
+
+.main-ls-desc
+  font-size: 20px
+  b
+    display: block
+    font-size: 2em
+    text-transform: uppercase
+    font-weight: bold
+  +max(992)
+    padding-bottom: 40px
+.sl__item
+  position: relative
+  align-items: center
+  // min-height: calc(100vh - 100px)
+  // padding: 25px
   background-repeat: no-repeat
   background-position: center 0
   background-size: cover
-  .container,span
+  &::before
+    content: ''
     display: block
-  // +sm-block()
-    min-height: calc(100vh - )
+    padding-top: 56.25%
+
 .sl-btn
   position: absolute
   top: 50%
@@ -87,71 +135,62 @@
   display: block
   text-align: center
   font-size: 4rem
+  font-size: 3rem
+  word-break: break-all
+  line-height: 1.1
   color: #fff
   font-weight: bold
   transition: all .25s linear
+  text-shadow:  4px 4px 0 rgba(0, 0, 0, 0.6)
   &:hover
     color: $action2
-  +sm-block()
-    padding-left: 20px
-    padding-right: 20px
+    text-shadow:  2px 2px 0 rgba(0, 0, 0, 1)
+  +lg-block()
     font-size: 3rem
-    line-height: 1.2
+  +md-block
+    font-size: 2rem
 
 
 
-.wrap
-  // background: silver
-  // .container
-    // max-width: 1600px
-    // background: green
-  .row.tabs
-    min-height: calc(100vh - 99px)
-    padding-top: 50px
-    padding-bottom: 50px
+.row.tabs
+  // min-height: calc(100vh - 171px)
+  // padding-top: 50px
+  // padding-bottom: 50px
+  min-height: calc(100vh - 171px)
+  +md-block
+    min-height: 0
 .practices
   .tabs__list
     height: 100%
     max-height: 1200px
+    min-height: 600px
     display: flex
+    flex-wrap: wrap
     margin: 0 -5px
-    // background: red
-    +md-block()
-      min-height: 300px
-    +sm-block()
-      // display: block
-      flex-direction: column
-      margin: 0
-  .tabs__list-part
-    width: 50%
-    margin: 0 5px
-    +sm-block()
-      width: 100%
-      margin: 0
-    &:first-child
-      +sm-block()
-        height: 33.33%
-        margin-bottom: 10px
-    &:last-child
-      +sm-block()
-        height: 66.67%
-      .tabs__list-item
-        height: calc(50% - 5px)
-        +sm-block()
-          height: 50%
-        &:first-child
-          margin-bottom: 10px
+    +lg-block
+    +md-block
+      height: 200px
+      max-height: initial
+      min-height: 0
+    &>div
+      width: 50%
+      padding: 5px
   .tabs__list-item
     position: relative
     display: flex
     align-items: flex-end
     justify-content: flex-end
+    width: 100%
     height: 100%
+    // width: calc(50% - 10px)
+    // height: calc(50% - 5px)
+    // margin: 5px
     padding: 1.4rem
     cursor: pointer
     background-repeat: no-repeat
     background-position: center
     background-size: cover
+    text-shadow: 2px 2px 0 #000
     &::before
       content: ''
       position: absolute
@@ -187,6 +226,7 @@
   .tabs__content
     height: 100%
     max-height: 1200px
+
     flex-direction: column
     +md-block()
       padding-top: 40px
@@ -198,14 +238,16 @@
   .tabs__content-action
     margin-top: auto
     padding-top: 15px
+    padding-bottom: 5px
     font-size: rem(16)
     font-weight: bold
     color: $action
     transition: color .25s linear
     &:hover
       color: $action2
-
-
+  // .tabs__content-text
+    // height: calc(100vh - 268px)
+    overflow: hidden
 .article
   padding: 50px 55px
   font-size: rem(18)
@@ -276,6 +318,7 @@
 .person-block
   // background: red
   padding: 40px 0
+  padding-top: 20px
 .row-person
   +md-block()
     flex-direction: column-reverse
@@ -389,10 +432,11 @@
 
 
 .contact-block
-  min-height: calc(100vh - 99px)
+  min-height: calc(100vh - 171px)
   display: flex
   align-items: center
   padding: 40px 0
+  padding-top: 20px
   // background: silver
   +md-block()
     min-height: 0
@@ -473,11 +517,56 @@
 
 .page-title
   padding: 20px 0 40px
+  padding: 20px 0
 
 .blog-article
   padding-bottom: 40px
   .container
     max-width: 1200px
+
+
+.pagination
+  display: flex
+  align-items: center
+  justify-content: center
+  padding: 0
+  font-size: rem(18)
+  // background: silver
+.page-item
+  &::before
+    display: none
+  a
+    display: block
+    padding: 4px 8px
+  &.active
+    color: $action2
+  &:first-child
+    display: none
+    font-size: rem(15)
+
+  &:last-child
+    display: none
+    font-size: rem(15)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* page style end */

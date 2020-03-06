@@ -1,6 +1,6 @@
 extends ../layout/main_layout
 
-block head 
+block head
   - var title = 'Теми для роздуму'
   - var bodyClass = ''
 block content
@@ -8,7 +8,7 @@ block content
   +bred()
   +page_title()
   .blog-articles
-    .container 
+    .container
       .row
         .col-12.blog-articles__item
           h2.blog-articles__title Lorem ipsum dolor sit.
@@ -35,3 +35,18 @@ block content
           p.blog-articles__short-desc Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima animi odit, dolorum, nulla fugiat optio cum rem beatae iste quisquam sit quis, exercitationem officia doloremque enim officiis tempora expedita tenetur odio facere placeat fuga similique. Totam aspernatur repellendus molestiae corporis voluptates commodi? Possimus deleniti vel commodi inventore et, dicta dolorem alias ducimus expedita sequi repellendus tenetur consequuntur consectetur, eaque obcaecati saepe autem, nisi natus cupiditate quod distinctio excepturi maiores? Minima?
           .blog-articles__action
             a.btn(href="#") Продовження
+
+        .col-12
+          ul.pagination
+            li.page-item
+              a.page-link(href='blog/') Первая
+            li.page-item
+              a.page-link(href='blog/') «
+            li.page-item
+              a.page-link(href='blog/') 1
+            li.page-item.active
+              a.page-link(href='blog/?page=2') 2
+            li.page-item.disabled
+              a.page-link(href='#') »
+            li.page-item.disabled
+              a.page-link(href='#') Последняя

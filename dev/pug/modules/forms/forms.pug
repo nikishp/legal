@@ -5,8 +5,8 @@ mixin form_default(formClass,formId)
     // Hidden Required Fields
     input(name='form_subject', value='' + formTitle, type='hidden')
     // END Hidden Required Fields
-    .form__title 
-    .form__subtitle 
+    .form__title
+    .form__subtitle
     ul.form__list
       li.form__item
         input(type='text', required='', name='name', placeholder='name')
@@ -55,22 +55,26 @@ mixin form_default(formClass,formId)
 mixin form_contact(formClass,formId)
   - formClass = formClass || ''
   - formId = formId || ''
-  form(class='form ' + formClass, id=''+formId, action='#', enctype='multipart/form-data')
+  form(class='form' action='', enctype='multipart/form-data')
     // Hidden Required Fields
-    input(name='form_subject', value='' + formTitle, type='hidden')
+    input(name='subject', value='' + formTitle, type='hidden')
     // END Hidden Required Fields
-    //- .form__title 
-    //- .form__subtitle 
     .form__list
       .form__item
         label(for="inp_1") Ім'я
-        input(type='text', id="inp_1", required='', name='Имя', placeholder='')
+        input(type='text', id="inp_1", required='', name='name', placeholder='')
+        span.error_name.error
+          span.error Это поле обязательно для заполнения.
       .form__item
         label(for="inp_2") E-mail
         input(type='email', id="inp_2", required='', name='email', placeholder='')
+        span.error_name
+          span.error Это поле обязательно для заполнения.
       .form__item.form__item--textarea
         label(for="inp_3") Запитання
         textarea(name="Запитання", id="inp_3", required='', cols="30", rows="10")
+        span.error_name
+          span.error Это поле обязательно для заполнения.
       .form__item.form__item--btn
         button(type='submit').btn Надіслати
           span.form-load

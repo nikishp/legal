@@ -4,6 +4,18 @@
   &:not(:last-child)
     margin-bottom: 40px
   // background: silver
+  [class*='error_']
+    position: absolute
+    top: calc(100% + 3px)
+    left: 0
+    font-size: 13px
+    color: red !important
+    line-height: 1
+    opacity: 0
+    transition: opacity .25s linear
+    // background: silver
+  [class*='error_'].error
+    opacity: 1
   label
     position: absolute
     top: 50%
@@ -13,10 +25,10 @@
     cursor: text
     transform: translateY(-50%)
     transition: $tr
-  label.error
+  // label.error
     top: calc(100% + 5px)
     left: 0
-    color: red !important
+    // color: red !important
     font-size: 13px
     transform: none
   input,textarea

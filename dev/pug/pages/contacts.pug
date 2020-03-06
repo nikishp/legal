@@ -1,11 +1,12 @@
 extends ../layout/main_layout
 
-block head 
+block head
   - var title = 'Спілкуймося'
   - var bodyClass = ''
 block content
   +header()
   //- h1 Спілкуймося
+  +page_title()
   .contact-block
     .container
       //- .row
@@ -13,7 +14,7 @@ block content
           h1 Savior Legal
             //- +svg('logo')
       .row.row--contact
-        .col-md-6 
+        .col-md-6
           .contact-option.contact-option--phone
             h2 Дзвоніть
             a.phone(href="tel:+380999870227") +38(098) 870-22-73
@@ -29,10 +30,8 @@ block content
                 +svg('link')
               a.sc__link(href='https://t.me/')
                 +svg('tg')
-        .col-md-6 
+        .col-md-6
           .contant-form
             h2 Запитуйте
-            - formTitle = 'Contact page form'
-            +form_contact('formClass', 'formId')
-
-
+            - formTitle = 'Форма на сторінці контактів'
+            +form_contact('', '')
